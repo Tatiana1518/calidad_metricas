@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>METRICAS</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/index.html">INICIO</a></li>
+            <li><a href="/Pag/medidas.html">MEDIDAS</a></li>
+            <li><a href="/Pag/factores.html">FACTORES</a></li>
+            <li><a href="/Pag/furps.html">FURPS</a></li>
+            <li><a href="/Pag/metricas.html">METRICAS</a></li>
+        </ul>
+    </nav>
+    <h1 class="h1">Métricas del modelo de análisis</h1>
+    <p>En esta fase se obtendrán los requisitos y se establecerá el fundamento
+        para el diseño. Y es por eso que se desea una visión interna a la calidad del
+        modelo de análisis. Sin embargo hay pocas métricas de análisis y especificación,
+        se sabe que es posible adaptar métricas obtenidas para la aplicación de un
+        proyecto, en donde las métricas examinan el modelo de análisis con el fin de
+        predecir el tamaño del sistema resultante, en donde resulte probable que el
+        tamaño y la complejidad del diseño estén directamente relacionadas. Es por eso
+        que se verán en las siguientes secciones las métricas orientadas a la función, la
+        métrica bang y las métricas de la calidad de especificación.</p>
+    <h1 class="h1">Métricas basadas en la función</h1>
+    <p>La métrica de punto de función (PF) (capítulo 3.6.2) se puede usar como
+        medio para predecir el tamaño de un sistema que se va a obtener de un modelo
+        de análisis. Para instruir el empleo de la métrica PF, se considerará una sencilla
+        representación del modelo de análisis mostrada por Pressman [‘98]en la figura 4.3
+        En donde se representa un diagrama de flujo de datos, de una función de una
+        aplicación de software llamada Hogar Seguro. La función administra la interacción
+        con el usurario, aceptando una contraseña de usuario para activar/ desactivar el
+        sistema y permitiendo consultas sobre el estado de las zonas de seguridad y
+        varios censores de seguridad. La función muestra una serie de mensajes de
+        petición y envía señales apropiadas de control a varios componentes del sistema
+        de seguridad.
+        El diagrama de flujo de datos se evalúa para determinar las medidas clave
+        necesarias para el cálculo de al métrica de PF.:
+        - número de entradas de usuario
+        - número de salidas de usuario
+        - número de consultas del usuario
+        - número de archivos
+        - número de interfaces externas
+        <img src="/assest/3.png" alt="img" class="img">
+    </p>
+    <h1 class="h1">La métrica Bang</h1>
+    <p>
+        Puede emplearse para desarrollar una indicación del tamaño del software a
+        implementar como consecuencia del modelo de análisis. Desarrollada por Tom
+        DeMarco [Ejiogo ‘91], la métrica bang es “ una indicación, independiente de la
+        implementación, del tamaño del sistema” [Ejiogo ‘91]. Para calcular la métrica
+        bang, el desarrollador de software debe evaluar primero un conjunto de primitivas
+        (elementos del modelo de análisis que no se subdividen más en el nivel de
+        análisis) Las primitivas se determinan evaluando el modelo de análisis y
+        desarrollando cuentas para los siguientes elementos:
+        - Primitivas funcionales (Pfu) Transformaciones (burbujas) que aparecen en
+        el nivel inferior de un diagrama de flujo de datos.
+        - Elementos de datos (ED) Los atributos de un objeto de datos, los elementos
+        de datos no compuestos y aparecen en el diccionario de datos.
+        - Objetos (OB) Objetos de datos.
+        - Relaciones (RE) Las conexiones entre objetos de datos.
+        - Transiciones (TR) El número de transacciones de estado en el diagrama de
+        transición de estado.
+        Además de las seis primitivas nombradas arriba, se determinan medidas
+        adicionales para:
+        - Primitivas modificadas de función manual (PMFu) Funciones que caen
+        fuera del límite del sistema y que deben modificarse para acomodarse al
+        nuevo sistema.
+        - Elementos de datos de entrada (EDE) Aquellos elementos de datos que se
+        introducen en el sistema.
+        - Elementos de datos de salida (EDS) Aquellos elementos de datos que se
+        sacan en el sistema.
+        - Elementos de datos retenidos (EDR) Aquellos elementos de datos que son
+        retenidos (almacenados) por el sistema.
+        - Muestras (tokens) de datos (TCi) Las muestras de datos (elementos de
+        datos que no se subdividen dentro de una primitiva funcional) que existen
+        en el l’imite de la i-ésima primitiva funcional (evaluada para cada primitiva).
+        - Conexiones de relación (Rei) Las relaciones que conectan el i-ésimo objeto
+        en el modelo de datos con otros objetos.
+    </p>
+    <h1 class="h1">Métricas de la Calidad de Especificación</h1>
+    <p>
+        Existe una lista de características para poder valorar la calidad del modelo
+        de análisis y la correspondiente especificación de requisitos: Especificidad,
+        corrección, compleción, comprensión, capacidad de verificación, consistencia
+        externa e interna, capacidad de logro, concisión, traza habilidad, capacidad de
+        modificación, exactitud y capacidad de reutilización. Aunque muchas de las
+        características anteriores pueden ser de naturaleza cuantitativa, Davis [Pressman
+        ‘98] sugiere que todas puedan representarse usando una o más métricas. Por
+        ejemplo asumimos que hay ni requisitos en una especificación, tal como
+
+        ni = nf + nnf (4.8)
+        Donde nf es el numero de requisitos funcionales y nnf es el número de requisitos
+        no funcionales ( por ejemplo, rendimiento).
+        Para determinar la especificidad de los requisitos, Davis [Pressman ‘98]
+        sugiere una métrica basada en la consistencia de la interpretación de los revisores
+        para cada requisito:
+
+        Q1 = nui / nr (4.9)
+        Donde nui es el numero de requisitos para los que todos los revisores tuvieron
+        interpretaciones idénticas. Cuanto más cerca de uno este el valor de Q1 menor
+        será la ambigüedad de la especificación.
+        La compleción de los requisitos funcionales pueden terminarse calculando la
+        relación
+
+        Q2 = nu / (ni * ns) (4.10)
+
+        82
+        donde nu es el número de requisitos de función únicos, ni es el número de
+        entradas (estímulos) definidos o implicados por la especificación y ns es el número
+        de estados especificados. La relación Q2 mide porcentaje de funciones necesarias
+        que se han especificado para un sistema, sin embargo, no trata los requisitos no
+        funciónales. Para incorporarlos a una métrica global completa, debemos
+        considerar el grado de validación de los requisitos:
+
+        Q3 = nc / (nc + nnv) (4.11)
+        donde nc es el número de requisitos que se han validados como correctos y nnv el
+        número de requisitos que no se han validado todavía.
+    </p>
+    <h1 class="h1">Métrica del modelo del diseño</h1>
+    <p>
+        Las métricas para software, como otras métricas, no son perfectas; muchos
+        expertos argumentan que se necesita más experimentación hasta que se puedan
+        emplear bien las métricas de diseño. Sin embargo el diseño sin medición es una
+        alternativa inaceptable. A continuación se mostraran algunas de las métricas de
+        diseño más comunes. Aunque ninguna es perfecta, pueden proporcionarle al
+        diseñador una mejor visión interna y así el diseño evolucionara a un mejor nivel de
+        calidad.
+    </p>
+    <h1 class="h1">Metricas de diseño de alto nivel</h1>
+    <p>
+        Estas se concentran en las caracteristicas de la estructura del programa
+        dandole enfasis a la estructura arquitectonica y en la diferencia de los modulos.
+        Estas métricas son de caja negra, en el sentido de que no se requiere ningún
+        conocimiento del trabajo interno de ningún modo en particular del sistema.
+        Card y Glass [Pressman ’98] proponen tres medidas de complejidad del
+        software: complejidad estructural, complejidad de datos y complejidad del sistema.
+        La complejidad estructural. S(i), de un módulo i se define de la siguientes
+        manera.
+
+        S(i) = f2
+        out (i) (4.12)
+
+        donde f out (i) es la expansión del módulo i.
+        La complejidad de datos. D(i) proporciona una indicación de la complejidad
+        en la interfaz interna de un módulo i y se define como :
+
+        D(i) = v(i) / [fout (i) + 1] (4.13)
+
+        donde v(i) es el número de variables de entrada y salida del módulo i.
+        Finalmente. la complejidad del sistema. C(i), se define como la suma de las
+        complejidades estructural y de datos, y se define como.
+
+        C(i)=S(i)+D(i) (4.14)
+        A medida que crecen los valores de complejidad, la complejidad arquitectónica o
+        global del sistema también aumenta. Esto lleva a una mayor probabilidad de que
+        aumente el esfuerzo necesario para la integración y las pruebas.
+        Una métrica de diseño arquitectónico propuesta por Henry y Kafura [Hamdi
+        ‘99] también emplea la expansión y la concentración. Los autores definen una
+        métrica de complejidad de la forma:.
+
+        MHK = longitud (i) x [f¡n(i) + fout(i)]2 (4.15)
+
+        84
+        donde la longitud (i) es el número de sentencias en lenguaje de programación en
+        el módulo (i) y fin (i) es la concentración del módulo i. Henry y Kafura amplían la
+        definición de concentración y expansión no sólo el número de conexiones de
+        control del módulo (llamadas al módulo), sino también el número de estructuras de
+        datos del que el módulo i recoge (concentración) o actualiza (expansión) datos.
+        Para calcular el MHK durante el diseño, puede emplearse el diseño procedimental
+        para estimar el número de sentencias del lenguaje de programación del módulo i.
+        Como en las métricas de Card y Glass mencionadas anteriormente, un aumento
+        en la métrica de Henry-Kafura conduce a una mayor probabilidad de que también
+        aumente el esfuerzo de integración y pruebas del módulo.
+    </p>
+    <h1 class="h1">Métricas de cohesión.</h1>
+    <p>
+        definen una colección de métricas que proporcionan
+        una indicación de la cohesión de un módulo. Las métricas se definen con cinco
+        conceptos y medidas:
+        - Porción de datos. Dicho simplemente, una porción de datos es una marcha
+        atrás a través de un módulo que busca valores de datos que afectan a la
+        localización del módulo en el que empezó la marcha atrás. Debería resaltarse
+        que se pueden definir tanto porciones de programas (que se centran en
+        enunciados y condiciones) como porciones de datos.
+        - Símbolos léxicos (tokens) de datos. Las variables definidas para un módulo
+        pueden definirse como señales de datos para el módulo.
+        - Señales de unión. El conjunto de señales de datos que se encuentran en uno o
+        más porciones de datos.
+        - Señales de super-unión. Las señales de datos comunes a todas las porciones
+        de datos de un módulo.
+        - Cohesión. La cohesión relativa de una señal de unión es directamente
+        proporcional al número de porciones de datos que liga.
+    </p>
+        <h1 class="h1">Métricas de acoplamiento.</h1>
+        <p>El acoplamiento de módulo proporciona una indicación de la “conectividad” de un
+            módulo con otros módulos, datos globales y entorno exterior. Dhama [Fenton ‘91]
+            ha propuesto una métrica para el acoplamiento del módulo que combina el
+            acoplamiento de flujo de datos y de control: acoplamiento global y acoplamiento
+            de entorno. Las medidas necesarias para calcular el acoplamiento de módulo se
+            definen en términos de cada uno de los tres tipos de acoplamiento apuntados
+            anteriormente.
+            
+            Para el acoplamiento de flujo de datos y de control:
+            
+            di = número de parámetros de datos de entrada
+            ci = número de parámetros de control de entrada
+            do = número de parámetros de datos de salida
+            co = número de parámetros de control de salida
+            Para el acoplamiento global
+            gd = número de variables globales usadas como datos
+            gc = numero de variables globales usadas como control
+
+            Para el acoplamiento de entorno:
+            w = número de módulos llamados (expansión)
+            r = número de módulos que llaman al módulo en cuestión (concentración)
+        </p>
+        <h1 class="h1">Métricas de complejidad.</h1>
+        <p>
+            Se pueden calcular una variedad de métricas del software para determinar
+            la complejidad del flujo de control del programa. Muchas de éstas se basan en una
+            representación denominada grafo de flujo, un grafo es una representación
+            compuesta de nodos y enlaces (también denominados filos) Cuando se dirigen los
+            enlaces (aristas), el grafo de flujo es un grafo dirigido.
+        </p>
+        <h1 class="h1">Métricas de diseño de interfaz</h1>
+        <p>
+            Se sugiere la conveniencia de la representación (CR)
+            como una valiosa métrica de diseño para interfaces hombre-máquina. Una IGU
+            (Interfaz Gráfica de Usuario) típica usa entidades de representación, iconos
+            gráficos, texto, menús, ventanas y otras para ayudar al usuario a completar tareas.
+            Para realizar una tarea dada usando una IGU, el usuario debe moverse de una
+            entidad de representación a otra. Las posiciones absolutas y relativas de cada
+            entidad de representación, la frecuencia con que se utilizan y el “costo” de la
+            transición de una entidad de representación a la siguiente contribuirá a la
+            conveniencia de la interfaz.
+        </p>
+</body>
+</html>

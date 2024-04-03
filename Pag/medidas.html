@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>MEDIDAS</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/index.html">INICIO</a></li>
+            <li><a href="/Pag/medidas.html">MEDIDAS</a></li>
+            <li><a href="/Pag/factores.html">FACTORES</a></li>
+            <li><a href="/Pag/furps.html">FURPS</a></li>
+            <li><a href="/Pag/metricas.html">METRICAS</a></li>
+        </ul>
+    </nav>
+    <h1 class="h1">Medida de la calidad</h1>
+    <p>Corrección: A un programa le corresponde operar correctamente o suministrará
+        poco valor a sus usuarios. La corrección es el grado en el que el software lleva a
+        cabo una función requerida. La medida más común de corrección son los defectos
+        por KLDC, en donde un defecto se define como una falla verificada de
+        conformidad con los requisitos.
+        Facilidad de mantenimiento. El mantenimiento del software cuenta con más
+        esfuerzo que cualquier otra actividad de ingeniería del software. La facilidad de
+        mantenimiento es la habilidad con la que se puede corregir un programa si se
+        encuentra un error, se puede adaptar si su entorno cambia o optimizar si el cliente
+        desea un cambio de requisitos. No hay forma de medir directamente la facilidad de
+        mantenimiento; por consiguiente, se deben utilizar medidas indirectas. Una
+        métrica orientada al tiempo simple es el tiempo medio de cambio (TMC), es decir,
+        el tiempo que se tarda en analizar la petición de cambio, en diseñar una
+        modificación apropiada, en efectuar el cambio, en probarlo y en distribuir el cambio
+        a todos los usuarios.
+        Integridad. En esta época de intrusos informáticos y de virus, la integridad del
+        software ha llegado a tener mucha importancia. Este atributo mide la habilidad de
+        un sistema para soportar ataques (tanto accidentales como intencionados) contra
+        su seguridad. El ataque se puede ejecutar en cualquiera de los tres componentes
+        del software, ya sea en los programas, datos o documentos.
+        Para medir la integridad, se tienen que definir dos atributos adicionales:
+        amenaza y seguridad. La amenaza es la probabilidad (que se logra evaluar o
+        concluir de la evidencia empírica) de que un ataque de un tipo establecido ocurra
+        en un tiempo establecido. La seguridad es la probabilidad (que se puede estimar o
+        deducir de la evidencia empírica) de que se pueda repeler el ataque de un tipo
+        establecido, en donde la integridad del sistema se puede especificar como:
+        integridad = Ó[1- amenaza x (1- seguridad)] (4.1)
+
+        donde se suman la amenaza y la seguridad para cada tipo de ataque.
+
+        Facilidad de uso. El calificativo “amigable con el usuario” se ha transformado
+        universalmente en disputas sobre productos de software. Si un programa no es
+        “amigable con el usuario”, prácticamente está próximo al fracaso, incluso aunque
+        las funciones que realice sean valiosas. La facilidad de uso es un intento de
+        cuantificar “lo amigable que pude ser con el usuario” y se consigue medir en
+        función de cuatro características: (1) destreza intelectual y/o física solicitada para
+        aprender el sistema; (2) el tiempo requerido para alcanzar a ser moderadamente
+        eficiente en el uso del sistema; (3) aumento neto en productividad (sobre el
+        enfoque que el sistema reemplaza) medida cuando alguien emplea el sistema
+        moderadamente y eficientemente, y (4) valoración subjetiva (a veces obtenida
+        mediante un cuestionario) de la disposición de los usuarios hacia el sistema.
+    </p>
+        <h1 class="h1">Medidas de fiabilidad y de disponibilidad.</h1>
+        <p>
+            Los trabajos iniciales sobre fiabilidad buscaron extrapolar las matemáticas
+            de la teoría de fiabilidad del hardware a la predicción de la fiabilidad del software.
+            La mayoría de los modelos de fiabilidad relativos al hardware van más orientados
+            a los fallos debidos al desajuste, que a los fallos debidos a defectos de diseño, ya
+            que son más probables debido al desgaste físico (p. ej.: el efecto de la
+            temperatura, del deterioro, y los golpes) que los fallos relativos al diseño.
+            Desgraciadamente, para el software lo que ocurre es lo contrario. De hecho, todos
+            los fallos del software, se producen por problemas de diseño o de implementación.
+            Considerando un sistema basado en computadora, una medida sencilla de
+            la fiabilidad es el tiempo medio entre fallos (TMEF) [Mayrhauser ́91], donde:
+
+            TMEF = TMDF+TMDR (4.2)
+            (TMDF (tiempo medio de fallo) y TMDR (tiempo medio de reparación)).
+
+            Muchos investigadores argumentan que el TMDF es con mucho, una
+            medida más útil que los defectos/KLDC, simplemente porque el usuario final se
+            enfrenta a los fallos, no al número total de errores. Como cada error de un
+            programa no tiene la misma tasa de fallo, la cuenta total de errores no es una
+            buena indicación de la fiabilidad de un sistema. Por ejemplo, consideremos un
+            programa que ha estado funcionando durante 14 meses. Muchos de los errores
+            del programa pueden pasar desapercibidos durante décadas antes de que se
+            detecten. El TMEF de esos errores puede ser de 50 e incluso de 100 años. Otros
+            errores, aunque no se hayan descubierto aún, pueden tener una tasa de fallo de
+            18 ó 24 meses, incluso aunque se eliminen todos los errores de la primera
+            categoría (los que tienen un gran TMEF), el impacto sobre la fiabilidad del
+            software será muy escaso.
+            Además de una medida de la fiabilidad debemos obtener una medida de la
+            disponibilidad. La disponibilidad (4.1.3.2) del software es la probabilidad de que un
+            programa funcione de acuerdo con los requisitos en un momento dado, y se define
+            como:
+
+            Disponibilidad = TMDF/(TMDF + TMDR) x 100 % (4.3)
+
+            La medida de fiabilidad TMEF es igualmente sensible al TMDF que al
+            TMDR. La medida de disponibilidad es algo más sensible al TMDR ya que es una
+            medida indirecta de la facilidad de mantenimiento del software.
+        </p>
+        <h1 class="h1">Eficacia de la Eliminación de Defectos</h1>
+        <p>
+            Una métrica de la calidad que proporciona beneficios tanto a nivel del
+            proyecto como del proceso, es la eficacia de la eliminación de defectos (EED) En
+            particular el EED es una medida de la habilidad de filtrar las actividades de la
+            garantía de calidad y de control al aplicarse a todas las actividades del marco de
+            trabajo del proceso.
+            Cuando se toma en consideración globalmente para un proyecto, EED se define
+            de la forma siguiente:
+
+            EED = E / (E + D) (4.4)
+
+            donde E= es el número de errores encontrados antes de la entrega del software al
+            usuario final y D= es el número de defectos encontrados después de la entrega.
+        </p>
+</body>
+</html>
